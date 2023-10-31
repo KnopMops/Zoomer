@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <div class="intro">
+        <h1>Welcome to Zoomer!</h1>
+        <h2>For all your professional and personal needs!</h2>
+        <a href="{% url 'login' %}" class="button">Login</a>
+        <a href="{% url 'register' %}" class="button">Sign Up</a>
+    </div>
+{% endblock content %}

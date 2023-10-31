@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <div class="container">
+        <div class="registration form">
+        <header>Signup</header>
+        <form action="{% url 'register' %}" method="POST">
+            {% csrf_token %}
+            <input type="text" placeholder="Enter your first name" name="first_name">
+            <input type="text" placeholder="Enter your last name" name="last_name">
+            <input type="text" placeholder="Enter your email" name="email">
+            <input type="password" placeholder="Create a password" name="password1">
+            <input type="password" placeholder="Confirm your password" name="password2">
+            <input type="submit" class="button" value="Signup">
+            <center>
+            {% if error %}
+            <p style="color: red;">{{ error }}</p>
+            {% endif %}
+            </center>
+            
+        </form>
+        <div class="signup">
+            <span class="signup">Already have an account?
+            <a href="{% url 'login' %}"><label for="check">Login</label></a>
+            </span>
+        </div>
+        </div>
+    </div>
+{% endblock content %}
